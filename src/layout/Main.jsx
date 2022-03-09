@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Movies from '../components/Movies';
+import Preloader from '../components/Preloader';
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
@@ -14,7 +15,7 @@ const Main = () => {
 
   return (
     <main className="container content">
-      {movies.length ? <Movies movies={movies} /> : <h3>Loading…</h3>}
+      {movies.length ? <Movies movies={movies} /> : <Preloader />}
     </main>
   );
 };
