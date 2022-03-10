@@ -16,7 +16,7 @@ const Search = ({ searchMovies }) => {
 
   const handleFilter = event => {
     setType(event.target.dataset.type);
-    searchMovies(text, type);
+    searchMovies(text === '' ? 'terminator' : text, event.target.dataset.type);
   };
 
   return (
