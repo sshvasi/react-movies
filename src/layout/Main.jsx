@@ -3,6 +3,8 @@ import Movies from '../components/Movies';
 import Preloader from '../components/Preloader';
 import Search from '../components/Search';
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 const Main = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +12,7 @@ const Main = () => {
   const searchMovies = (str = 'terminator', type = 'all') => {
     setIsLoading(true);
     fetch(
-      `http://www.omdbapi.com/?apikey=c15ac1f0&s=${str}${
+      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${
         type !== 'all' ? `&type=${type}` : ''
       }`
     )
